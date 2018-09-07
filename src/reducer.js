@@ -13,6 +13,7 @@ export default (state = initialState , action) => {
             })
         case '_SUCCESS':
             console.log('rest succc');
+            return
         default:
             return state
     }

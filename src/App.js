@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { simpleAction, addNotebook,testApi } from './action'
 import PropTypes from 'prop-types';
 
@@ -24,7 +24,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React hi</h1>
+          <h1 className="App-title">Welcome to React hi
+          <div className="test">
+            hi
+          </div>
+          </h1>
         </header>
         <button onClick={this.simpleAction}>click</button>
         <p className="App-intro">
