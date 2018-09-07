@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
+import logo from '../../logo.svg';
 import './App.scss';
 import { simpleAction, addNotebook,testApi } from './action'
 import PropTypes from 'prop-types';
