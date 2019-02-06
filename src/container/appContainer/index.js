@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
-import './App.scss';
+import { Button } from '@material-ui/core';
+import logo from '../../logo.svg';
+import './app.scss';
 import { simpleAction, addNotebook,testApi } from './action'
 import PropTypes from 'prop-types';
 
@@ -31,6 +32,9 @@ class App extends Component {
           </h1>
         </header>
         <button onClick={this.simpleAction}>click</button>
+        <Button variant="contained" color="primary">
+          Hello World
+        </Button>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
           {listItems}

@@ -1,8 +1,10 @@
 {
-  "name": "hello-world",
+  "name": "l-social-network",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.0.2",
+    "@material-ui/icons": "^3.0.1",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
     "babel-core": "6.26.0",
@@ -38,7 +40,11 @@
     "react": "^16.5.0",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.5.0",
+    "react-lazyload": "^2.3.0",
+    "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-axios-middleware": "^4.0.0",
     "redux-thunk": "^2.3.0",
