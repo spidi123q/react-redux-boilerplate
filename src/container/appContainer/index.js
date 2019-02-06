@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import logo from '../../logo.svg';
-import './App.scss';
+import './app.scss';
 import { simpleAction, addNotebook,testApi } from './action'
 import PropTypes from 'prop-types';
 
