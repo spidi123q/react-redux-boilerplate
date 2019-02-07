@@ -11,13 +11,23 @@ const Home = Loadable({
   loader: () => import('../../stories/home'),
   loading: LoaderComponent
 });
+const List = Loadable({
+  loader: () => import('../../stories/list'),
+  loading: LoaderComponent
+});
+const View = Loadable({
+  loader: () => import('../../stories/view'),
+  loading: LoaderComponent
+});
 
 
 const Routes = (props) => {
   return (
       <Switch>
         <Route exact path={'/'} component={Home} />
-        <Route path={'/test'} component={App} />
+        <Route path={'/list/:index'} component={List} />
+        <Route path={'/list'} component={List} />
+        <Route path={'/view'} component={View} />
       </Switch>
   )
 }
