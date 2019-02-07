@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 
 import './form.scss';
 import { Button, TextField, GridListTile, Select, MenuItem, Input } from '@material-ui/core';
-import { handleChange, add } from './action';
+import { handleChange, add, handleSubmit } from './action';
 
 class FormContainer extends Component {
 
@@ -12,7 +12,7 @@ class FormContainer extends Component {
 
     return (
       <Grid container item xs={12} justify="center">
-        <form>
+        <form onSubmit={this.props.handleSubmit}>
           {
             this.props.form.map((item, index) =>           
             <Grid key={index} container item xs={12}>
@@ -41,7 +41,7 @@ class FormContainer extends Component {
             <Button onClick={this.props.add} variant="contained" color="primary">Add</Button>
           </Grid>
           <Grid container item xs={12} justify="center">
-            <Button variant="contained" color="primary">Submit</Button>
+            <Button type="submit" variant="contained" color="primary">Submit</Button>
           </Grid>
         </form>
       </Grid>
@@ -54,6 +54,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   handleChange: (event, index) => dispatch(handleChange(event, index)),
-  add: () => dispatch(add())
+  add: () => dispatch(add()),
+  handleSubmit: (event) => dispatch(handleSubmit(event)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);

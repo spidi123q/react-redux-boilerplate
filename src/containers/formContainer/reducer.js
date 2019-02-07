@@ -1,10 +1,13 @@
 import {
-    HANDLE_CHANGE, ADD
+    HANDLE_CHANGE, ADD, HANDLE_SUBMIT
 } from './constants';
 export default (state = initialState, action) => {
 	console.log('TCL: action', action)
 	console.log('TCL: state', state)
     switch (action.type) {
+        case HANDLE_SUBMIT:
+            localStorage.setItem("form", JSON.stringify(state.form))
+            return state
         case HANDLE_CHANGE:
             const arr = state.form.slice()
             let formObj = Object.assign(arr[action.payload.index], {

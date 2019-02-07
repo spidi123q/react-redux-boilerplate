@@ -1,4 +1,4 @@
-import { HANDLE_CHANGE, ADD } from "./constants";
+import { HANDLE_CHANGE, ADD, HANDLE_SUBMIT } from "./constants";
 
 export const handleChange = (event, index) => {
     return {
@@ -14,5 +14,13 @@ export const handleChange = (event, index) => {
 export const add = () => {
     return {
         type: ADD
+    }
+}
+
+export const handleSubmit = (event) => {
+    console.log("​handleSubmit -> data")
+    event.preventDefault()
+    return {
+        type: HANDLE_SUBMIT
     }
 }
