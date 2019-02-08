@@ -6,9 +6,13 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case LOAD_FORM:
             let form = JSON.parse(localStorage.getItem('form'));
+            form.formName= form[0].formName
 			console.log('TCL: form', form)
             return Object.assign({}, state, {
-                inputs: form
+                inputs: form,
+                form: {
+                    formName: form.formName
+                }
             })
         case HANDLE_SUBMIT:
             let list = localStorage.getItem('list')

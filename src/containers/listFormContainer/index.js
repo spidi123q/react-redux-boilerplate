@@ -25,6 +25,8 @@ class ListFormContainer extends Component {
     for(let item of this.props.inputs) {
       this.inputs[item.fieldName] = ''
     }
+    this.inputs.formName = this.props.inputs.formName
+		console.log('TCL: update -> this.props.inputs', this.props.inputs)
   }
   render() {
     this.update()
@@ -33,7 +35,10 @@ class ListFormContainer extends Component {
     return (
       <form onSubmit={(event) => this.props.handleSubmit(event, this.props.index)} className="labour-form">
         <Grid container item xs={12}>
-          <h3>Work with us Be registered and get works as per ur choice.</h3>
+        <TextField className="hash-input" required type="text"
+                  value={this.inputs.formName}
+                  name={this.inputs.formName} onChange={this.props.handleChange} 
+                  label={this.inputs.formName}></TextField>
         </Grid>
         <Grid container justify="center" item xs={12}>
           {

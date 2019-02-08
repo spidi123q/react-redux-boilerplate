@@ -23,16 +23,22 @@ class ViewTableContainer extends Component {
             <Card key={index}>
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
-                Word of the Day
+                Form Name
               </Typography>
               <Typography variant="h5" component="h2">
+                {item.formName}
+              </Typography>
+              <Typography color="textSecondary">
+                Index
+              </Typography>
+              <Typography component="p">
                 {index}
               </Typography>
               <Typography color="textSecondary">
-                adjective
+                Field Count
               </Typography>
               <Typography component="p">
-                well meaning and kindly.
+               {Object.keys(item).length - 1}
               </Typography>
             </CardContent>
             <CardActions>

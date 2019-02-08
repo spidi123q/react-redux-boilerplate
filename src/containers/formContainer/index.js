@@ -14,15 +14,19 @@ class FormContainer extends Component {
     return (
       <Grid container item xs={12} justify="center">
         <form onSubmit={this.props.handleSubmit}>
+          <Grid container item xs={6}>
+            <TextField required className="hash-input" name="formName" 
+              onChange={event => this.props.handleChange(event, 0)} label="Form name"></TextField>
+          </Grid>
           {
             this.props.form.map((item, index) =>           
             <Grid key={index} container item xs={12}>
               <Grid container item xs={6}>
-                <TextField className="hash-input" name="fieldName" 
+                <TextField required className="hash-input" name="fieldName" 
                 onChange={event => this.props.handleChange(event, index)} label="Field name"></TextField>
               </Grid>
               <Grid container item xs={6}>
-                <Select
+                <Select required
                 value={item.fieldType}
                 onChange={event => this.props.handleChange(event, index)}
                 input={<Input name="fieldType" id="age-helper" />}>

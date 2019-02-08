@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
 
 const initialState = {
     form: [
-        {fieldName: '', fieldType: 'String'},       
+        {fieldName: '', fieldType: 'String', formName: ''},       
     ],
     isSubmitted: false
 }
