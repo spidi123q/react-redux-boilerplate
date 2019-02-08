@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import './form.scss';
 import { Button, TextField, GridListTile, Select, MenuItem, Input } from '@material-ui/core';
 import { handleChange, add, handleSubmit } from './action';
+import { Redirect } from 'react-router'
 
 class FormContainer extends Component {
 
@@ -44,6 +45,9 @@ class FormContainer extends Component {
             <Button type="submit" variant="contained" color="primary">Submit</Button>
           </Grid>
         </form>
+        {
+          this.props.isSubmitted && <Redirect to="/list"/>
+        }
       </Grid>
     );
   }

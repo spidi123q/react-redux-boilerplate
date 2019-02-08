@@ -1,9 +1,15 @@
 import {
-    HANDLE_CHANGE, HANDLE_SUBMIT, LOAD_DATA
+    HANDLE_CHANGE, HANDLE_SUBMIT, LOAD_DATA, LOAD_FORM
 } from './constants';
 export default (state = initialState, action) => {
 	console.log('TCL: state', state)
     switch (action.type) {
+        case LOAD_FORM:
+            let form = JSON.parse(localStorage.getItem('form'));
+			console.log('TCL: form', form)
+            return Object.assign({}, state, {
+                inputs: form
+            })
         case HANDLE_SUBMIT:
             let list = localStorage.getItem('list')
             if(action.payload.index) {
@@ -43,4 +49,6 @@ export default (state = initialState, action) => {
     }
 }
 
-const initialState = {}
+const initialState = {
+    inputs: []
+}

@@ -7,7 +7,9 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case HANDLE_SUBMIT:
             localStorage.setItem("form", JSON.stringify(state.form))
-            return state
+            return Object.assign({}, state, {
+                isSubmitted: true
+            })
         case HANDLE_CHANGE:
             const arr = state.form.slice()
             let formObj = Object.assign(arr[action.payload.index], {
@@ -31,5 +33,6 @@ export default (state = initialState, action) => {
 const initialState = {
     form: [
         {fieldName: '', fieldType: 'String'},       
-    ]
+    ],
+    isSubmitted: false
 }

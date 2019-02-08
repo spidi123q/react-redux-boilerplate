@@ -1,4 +1,4 @@
-import { HANDLE_CHANGE, HANDLE_SUBMIT, LOAD_DATA } from "./constants";
+import { HANDLE_CHANGE, HANDLE_SUBMIT, LOAD_DATA, LOAD_FORM } from "./constants";
 
 export const handleChange = (event) => {
     return {
@@ -23,5 +23,11 @@ export const loadData = (index) => {
     return {
         type: LOAD_DATA,
         payload: index
+    }
+}
+
+export const loadForm = () => {
+    return {
+        type: LOAD_FORM,
     }
 }
