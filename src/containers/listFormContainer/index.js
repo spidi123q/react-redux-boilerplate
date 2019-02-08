@@ -11,6 +11,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import { Redirect } from 'react-router'
 
 
 class ListFormContainer extends Component {
@@ -86,6 +87,9 @@ class ListFormContainer extends Component {
             <Button type="submit" variant="contained" color="primary">Submit</Button>
           </Grid>
         </Grid>
+        {
+          this.props.isSubmitted && <Redirect to="/view"/>
+        }
       </form>
     );
   }
